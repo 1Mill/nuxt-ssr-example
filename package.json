@@ -1,1 +1,20 @@
-{}
+{
+  "name": "nuxt-ssr-example",
+  "version": "1.0.0",
+  "description": "An example application using Nuxt for SSR from an RESTful API.",
+  "author": "Erik Ekberg &lt;erikk.ekberg@outlook.com&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "@nuxtjs/axios": "^5.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
