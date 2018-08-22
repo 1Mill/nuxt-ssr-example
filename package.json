@@ -11,7 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^1.0.0",
+    "nuxt": "npm:nuxt-edge",
     "@nuxtjs/axios": "^5.0.0"
   },
   "devDependencies": {
