@@ -11,7 +11,7 @@
 export default {
 	async asyncData({ app }) {
 		const data = await app.$axios.$get('/posts')
-    return { posts: data }
+    return { posts: data.slice(0, 6) }
 	}
 }
 </script>
