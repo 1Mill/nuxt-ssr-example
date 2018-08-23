@@ -9,7 +9,7 @@
 import axios from 'axios'
 
 export default {
-	async asyncData({ req, params }) {
+	async asyncData() {
 		return axios.get('https://jsonplaceholder.typicode.com/posts')
 			.then(res => {
 				return { posts: res.data.slice(0, 5) }
