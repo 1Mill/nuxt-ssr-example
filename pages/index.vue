@@ -7,7 +7,6 @@
 
 <script>
 import axios from 'axios'
-import Post from '~/components/Post'
 
 export default {
 	async asyncData({ req, params }) {
