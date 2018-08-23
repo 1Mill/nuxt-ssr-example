@@ -1,8 +1,8 @@
 {
   "name": "nuxt-ssr-example",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "An example application using Nuxt for SSR from an RESTful API.",
-  "author": "Erik Ekberg &lt;erikk.ekberg@outlook.com&gt;",
+  "author": "Erik Ekberg <erik.ekberg@outlook.com>",
   "private": true,
 	"config": {
     "nuxt": {
