@@ -14,8 +14,8 @@
 import { mapGetters } from 'vuex'
 
 export default {
-	async fetch ({ store, params }) {
-		await store.dispatch('getPostById', params.id)
+	beforeCreate: function () {
+		this.$store.dispatch('getPostById', this.$route.params.id)
 	},
 
 	computed: {
