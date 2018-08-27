@@ -4,12 +4,6 @@
   "description": "An example application using Nuxt for SSR from an RESTful API.",
   "author": "Erik Ekberg <erik.ekberg@outlook.com>",
   "private": true,
-	"config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "3000"
-    }
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
