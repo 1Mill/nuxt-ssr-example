@@ -2,17 +2,21 @@
   <div>
 		<h1>Index Page</h1>
 		<div v-for='post in posts' :key='post.id'>
-			<router-link :to="'/posts/' + post.id">LINK</router-link>
-      {{ post.id }}: {{ post.title }}
+			<router-link :to="'/posts/' + post.id">{{ post.id }}: {{ post.title }}</router-link>
     </div>
 	</div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-	async asyncData({ app }) {
-		const data = await app.$axios.$get('/posts')
-    return { posts: data.slice(0, 6) }
+	async fetch ({ store, params }) {
+		await store.dispatch('getPosts')
+	},
+
+	computed: {
+		...mapGetters([ 'posts' ])
 	}
 }
 </script>
