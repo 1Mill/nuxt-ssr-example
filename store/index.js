@@ -4,34 +4,37 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       posts: [],
-      post: null
+      post: {}
     },
 
     mutations: {
-       setPosts: function (state, posts) {
-				 state.posts = posts
+       setAllStorePosts: function (state, payload) {
+				 state.posts = payload
 			 },
 
-			 setPost: function (state, post) {
-				 state.post = post
+			 setStorePost: function (state, payload) {
+				 state.post = payload
 			 }
     },
 
 		actions: {
-			async getPosts ({ commit }) {
+			async getAllPosts ({ commit }) {
 				const data = await this.$axios.$get(`/posts`)
-				commit('setPosts', data)
+				commit('setAllStorePosts', data)
 			},
 
-			async getPostById ({ commit }, id) {
-				const data = await this.$axios.$get(`/posts/${id}`)
-				commit('setPost', data)
+			getPostById ({ state, commit, dispatch }, id) {
+				dispatch('getAllPosts')
+					.then(() => {
+						const post = state.posts.find(post => post.id == id)
+						commit('setStorePost', post)
+					})
 			}
 		},
 
 		getters: {
 			posts: function (state) {
-				return state.posts.slice(0, 6)
+				return state.posts
 			},
 
 			post: function (state) {
