@@ -2,13 +2,11 @@
 	<div>
 		<router-link to='/'>HOME</router-link>
 		<h1>Post page for {{ $route.params.id }}</h1>
-		<div v-if='post'>
+		<div>
 			<h2>ID: {{ post.id }} -- {{ post.title }}</h2>
 			<p>{{ post.body }}</p>
 		</div>
-		<div v-else>
-			POST NOT PRESENT
-		</div>
+
 	</div>
 </template>
 
