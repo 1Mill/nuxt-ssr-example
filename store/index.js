@@ -18,17 +18,14 @@ const createStore = () => {
     },
 
 		actions: {
-			async getAllPosts ({ commit }) {
+			async nuxtServerInit ({ commit }) {
 				const data = await this.$axios.$get(`/posts`)
 				commit('setAllStorePosts', data)
 			},
 
-			getPostById ({ state, commit, dispatch }, id) {
-				dispatch('getAllPosts')
-					.then(() => {
-						const post = state.posts.find(post => post.id == id)
-						commit('setStorePost', post)
-					})
+			getPostById ({ state, commit }, id) {
+				const post = state.posts.find(post => post.id == id)
+				commit('setStorePost', post)
 			}
 		},
 
