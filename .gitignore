@@ -12,4 +12,6 @@ dist
 
 # IDE
 .idea
+
+# Atom editor config file
 .editorconfig
