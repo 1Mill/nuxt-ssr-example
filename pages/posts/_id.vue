@@ -17,6 +17,9 @@ export default {
 	validate: function ({ params }) {
 		return /^\d+$/.test(params.id)
 	},
+	validate: function ({ params, store }) {
+		return store.state.posts.some(post => post.id == params.id)
+	},
 
 	beforeCreate: function () {
 		this.$store.dispatch('getPostById', this.$route.params.id)
