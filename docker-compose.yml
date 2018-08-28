@@ -12,4 +12,4 @@ services:
       - .:/app
     ports:
       - 3000:3000
-    command: yarn run dev
+    command: yarn nuxt
