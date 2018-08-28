@@ -5,7 +5,6 @@ services:
     build: .
     env_file:
       - '.env'
-      - '.env.production'
     environment:
       - HOST=0.0.0.0
       - PORT=3000
