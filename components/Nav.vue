@@ -4,9 +4,11 @@
 			<div @click='toggleActive'>MENU</div>
 			<div>LOGO</div>
 		</div>
-		<div v-if='active'>
-			CONTENT
-		</div>
+		<transition name='slide-fade'>
+			<div v-if='active'>
+				CONTENT
+			</div>
+		</transition>
 	</div>
 </template>
 
@@ -26,5 +28,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+	.slide-fade-enter-active,
+	.slide-fade-leave-active {
+		transition: all .3s ease;
+	}
+
+	.slide-fade-enter,
+	.slide-fade-leave-to {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
 </style>
