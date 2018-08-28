@@ -14,6 +14,10 @@
 import { mapGetters } from 'vuex'
 
 export default {
+	validate: function ({ params }) {
+		return /^\d+$/.test(params.id)
+	},
+
 	beforeCreate: function () {
 		this.$store.dispatch('getPostById', this.$route.params.id)
 	},
