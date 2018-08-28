@@ -1,6 +1,9 @@
 <template>
 	<div class='[ w-100 pa3 white bg-dark-gray ]'>
-		<div @click='toggleActive'>NAV</div>
+		<div class='[ flex justify-between ]'>
+			<div @click='toggleActive'>MENU</div>
+			<div>LOGO</div>
+		</div>
 		<div v-if='active'>
 			CONTENT
 		</div>
