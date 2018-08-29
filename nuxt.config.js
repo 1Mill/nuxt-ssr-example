@@ -27,7 +27,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-		'tachyons'
+		'tachyons',
+		'~/assets/main.css'
   ],
 
   /*
