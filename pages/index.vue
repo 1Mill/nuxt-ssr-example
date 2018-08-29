@@ -1,9 +1,17 @@
 <template>
   <div>
-		<h1>Index Page</h1>
-		<div v-for='post in posts' :key='post.id'>
-			<router-link :to="'/posts/' + post.id">{{ post.id }}: {{ post.title }}</router-link>
-    </div>
+		<div
+		class='[ flex flex-row flex-wrap ]'
+		>
+			<router-link
+			v-for='post in posts' :key='post.id'
+			:to="'/posts/' + post.id"
+			class='[ w-100 mb2 mt1 black no-underline ]'
+			>
+				<h1 class='[ lh-title f3 ttc ]'>{{ post.title }}</h1>
+				<p class='[ lh-copy light-silver ]'>{{ post.body }}</p>
+			</router-link>
+		</div>
 	</div>
 </template>
 
