@@ -6,7 +6,7 @@
 			<router-link
 			v-for='post in posts' :key='post.id'
 			:to="'/posts/' + post.id"
-			class='[ w-100 mb2 mt1 black no-underline ]'
+			class='[ w-100 mb3 mt1 ph1 black no-underline ba b--silver ]'
 			>
 				<h1 class='[ lh-title f3 ttc ]'>{{ post.title }}</h1>
 				<p class='[ lh-copy light-silver ]'>{{ post.body }}</p>
